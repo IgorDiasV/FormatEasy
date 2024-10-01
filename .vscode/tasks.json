@@ -8,7 +8,7 @@
       "isBackground": true,
       "problemMatcher": {
         "owner": "typescript",
-        "pattern": "$tsc",
+        "pattern": "$tsc2",
         "background": {
           "activeOnStart": true,
           "beginsPattern": {
