@@ -1,1 +1,10 @@
-<p>text-formatter works!</p>
+<div class="mb-3">
+    <p>Digite o texto no campo abaixo e após isso escolha a formatação que deseja aplicar.</p>
+</div>
+<div class="mt-6">
+    <div class="d-flex gap-2 mb-2">
+        <button (click)="upperCase()" class="{{btnClasses}}">Maiusculo</button>
+        <button (click)="lowerCase()" class="{{btnClasses}}">Minusculo</button>
+    </div>
+    <textarea class="form-control" placeholder="Digite aqui o texto que sera formatado" id="text"></textarea>
+</div>

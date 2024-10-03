@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import $ from 'jquery';
 
 @Component({
   selector: 'app-text-formatter',
@@ -8,5 +9,19 @@ import { Component } from '@angular/core';
   styleUrl: './text-formatter.component.css'
 })
 export class TextFormatterComponent {
+  btnClasses: string = "btn btn-primary";
 
+  upperCase(){
+     var textArea  = $("#text");
+     var upperText: string = textArea.val()?.toString() || "";
+     
+     textArea.val(upperText.toUpperCase())
+  } 
+
+  lowerCase(){
+    var textArea  = $("#text");
+    var upperText: string = textArea.val()?.toString() || "";
+    
+    textArea.val(upperText.toLowerCase())
+ } 
 }
