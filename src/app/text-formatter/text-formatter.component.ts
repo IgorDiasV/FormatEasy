@@ -1,40 +1,31 @@
 import { Component } from '@angular/core';
-import $ from 'jquery';
-
+import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-text-formatter',
   standalone: true,
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './text-formatter.component.html',
   styleUrl: './text-formatter.component.css'
 })
+
 export class TextFormatterComponent {
   btnClasses: string = "btn btn-primary";
+  text: string = "";
 
   upperCase(){
-      let textArea  = $("#text");
-     let upperText: string = textArea.val()?.toString() || "";
-     
-     textArea.val(upperText.toUpperCase())
+    this.text = this.text.toUpperCase();
   } 
 
   lowerCase(){
-    let textArea  = $("#text");
-    let upperText: string = textArea.val()?.toString() || "";
-    
-    textArea.val(upperText.toLowerCase())
+    this.text = this.text.toLowerCase();
  } 
 
  captalize(){
-    let textArea  = $("#text");
-    let text: string = textArea.val()?.toString() || "";
-
     let captalizeWords: string[] = [];
-
-    text.split(" ").forEach(word => {
+    this.text.split(" ").forEach(word => {
       captalizeWords.push(word.charAt(0).toUpperCase() + word.slice(1).toLowerCase());
     })
 
-    textArea.val(captalizeWords.join(" "))
+    this.text = captalizeWords.join(" ");
  }
 }
