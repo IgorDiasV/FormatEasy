@@ -32,7 +32,7 @@ export class TextFormatterComponent {
     let captalizeWords: string[] = [];
 
     text.split(" ").forEach(word => {
-      captalizeWords.push(word.charAt(0).toUpperCase() + word.slice(1));
+      captalizeWords.push(word.charAt(0).toUpperCase() + word.slice(1).toLowerCase());
     })
 
     textArea.val(captalizeWords.join(" "))
