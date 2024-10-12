@@ -12,16 +12,29 @@ export class TextFormatterComponent {
   btnClasses: string = "btn btn-primary";
 
   upperCase(){
-     var textArea  = $("#text");
-     var upperText: string = textArea.val()?.toString() || "";
+      let textArea  = $("#text");
+     let upperText: string = textArea.val()?.toString() || "";
      
      textArea.val(upperText.toUpperCase())
   } 
 
   lowerCase(){
-    var textArea  = $("#text");
-    var upperText: string = textArea.val()?.toString() || "";
+    let textArea  = $("#text");
+    let upperText: string = textArea.val()?.toString() || "";
     
     textArea.val(upperText.toLowerCase())
  } 
+
+ captalize(){
+    let textArea  = $("#text");
+    let text: string = textArea.val()?.toString() || "";
+
+    let captalizeWords: string[] = [];
+
+    text.split(" ").forEach(word => {
+      captalizeWords.push(word.charAt(0).toUpperCase() + word.slice(1));
+    })
+
+    textArea.val(captalizeWords.join(" "))
+ }
 }
