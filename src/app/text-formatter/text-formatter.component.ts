@@ -22,7 +22,7 @@ export class TextFormatterComponent {
 
  captalize(){
     let captalizeWords: string[] = [];
-    this.text.split(" ").forEach(word => {
+    this.text.split(/(\s+)/).forEach(word => {
       captalizeWords.push(word.charAt(0).toUpperCase() + word.slice(1).toLowerCase());
     })
 
